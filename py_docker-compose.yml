@@ -1,0 +1,11 @@
+version: "4.0"
+services:
+  pytest:
+    image: python:latest
+    container_name: pytest
+    ports:
+      - 5678:5678
+    volumes:
+      - ./bash-script:/script
+      - ./python:/app
+    command: ["sh","/script/run_python.sh", "/app/1.py"]
